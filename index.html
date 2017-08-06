@@ -2,8 +2,56 @@
 <html>
 <head>
 	<title>Hangman</title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/cyborg/bootstrap.min.css">
+		<style type="text/css">
+			.jumbotron {
+				text-align: center;
+				border: 10px ridge #9933cc;
+				text-shadow: 2px 4px #9933cc;
+				}
+			#pictureBox {	
+				border: 10px ridge #9933cc;				
+			}
+			#guessBox {
+				border: 10px ridge #9933cc;				
+			}
+			.btn {
+				font-family: 'Kaushan Script', cursive;
+				font-weight: bolder;
+				color: #3c3c3c;
+				padding: 15px;
+				width: 33%;
+			}		
+		</style>
 </head>
 <body>
-
+	<!--  -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="jumbotron col-xs-12 col-md-6">
+				<span class="text-success">
+					<h1>Hangman!</h1>
+				</span>
+			</div>
+			<div class="col-md-3"></div>			
+		</div>
+		
+		<div class="row">
+			<canvas class="col-xs-12 col-md-6" id="pictureBox">
+				
+			</canvas>
+			<div class="col-xs-12 col-md-6" id="guessBox">
+				<div class="row">
+					<a href="#" class="btn btn-primary" id="classRockBands">Classic Rock Bands</a>
+					<a href="#" class="btn btn-primary" id="modernRockBands">Modern Rock Bands</a>
+					<a href="#" class="btn btn-warning" id="reset"> Try Again </a>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </html>
