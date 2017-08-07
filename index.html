@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Hangman</title>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/cyborg/bootstrap.min.css">
+		 <link rel="stylesheet" type="text/css" href="https://bootswatch.com/cyborg/bootstrap.min.css"> 
 		<style type="text/css">
 			.jumbotron {
 				text-align: center;
-				border: 10px ridge #9933cc;
-				text-shadow: 2px 4px #9933cc;
+				border: 10px ridge #0b2ee0;
+				text-shadow: 2px 4px #0b2ee0;
 				}
 			#pictureBox {	
-				border: 10px ridge #9933cc;				
+				border: 10px ridge #0b2ee0;	
+				background-image: url(https://raw.githubusercontent.com/robrollner/Hangman-game/master/assets/images/canvasBackgroundImage.jpg);			
 			}
 			#guessBox {
-				border: 10px ridge #9933cc;				
-			}
+				border: 10px ridge #0b2ee0;	
+				}
+				
 			.btn {
 				font-family: 'Kaushan Script', cursive;
 				font-weight: bolder;
 				color: #3c3c3c;
 				padding: 15px;
-				width: 33%;
-			}		
+				width: 49%;
+			}					
 		</style>
 </head>
 <body>
@@ -38,16 +41,24 @@
 			</div>
 			<div class="col-md-3"></div>			
 		</div>
-		
+		<div class="row">
+			<div class="col-xs-12 col-md-8" id="ltrBtn"></div>
+			<div class="col-xs-12 col-md-4" id="hold"></div>
+		</div>
 		<div class="row">
 			<canvas class="col-xs-12 col-md-6" id="pictureBox">
 				
-			</canvas>
+			</canvas>		
 			<div class="col-xs-12 col-md-6" id="guessBox">
+				<div class="row" id="btnBox">
+					<div class="col-xs-12 col-md-12">
+						<a onclick="answer()" href="#" class="btn btn-primary" id="classRockBands">Choose a Band</a>
+						<a href="#" class="btn btn-warning" id="reset"> Try Again </a>
+					</div>
 				<div class="row">
-					<a href="#" class="btn btn-primary" id="classRockBands">Classic Rock Bands</a>
-					<a href="#" class="btn btn-primary" id="modernRockBands">Modern Rock Bands</a>
-					<a href="#" class="btn btn-warning" id="reset"> Try Again </a>
+					<div class="col-xs-12 col-md-12" id="answerBox">
+					</div>								
+				</div>
 				</div>
 			</div>
 		</div>
