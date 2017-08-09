@@ -11,17 +11,16 @@ window.onload = function() {
 
     //Create letter buttons
     var button = function(){
-    	letterButtons = document.getElementById('#ltrBtn');
-    	letters = document.createElement('div');
-
+    	letterButtons = document.getElementById('ltrBtn');
     	for (var i = 0; i < letters.length; i++) {
-			letters.id = 'letters';
-			list = document.createElement('button');
+    		var newLetters = document.createElement('div');
+			newLetters.id = 'letters';
+			var list = document.createElement('button');
 			list.id = 'letter';
-    		list.innerHTML[i];
-    		check();
-    		letterButtons.appendChild(letters);
-    		letters.appendChild(list);
+    		list.innerHTML = letters[i];
+    		check(list);
+    		letterButtons.appendChild(newLetters);
+    		newLetters.appendChild(list);
     	}
     };
     //create guesses
@@ -37,7 +36,7 @@ window.onload = function() {
     				guess.innerHTML = " ";
     				space = 1;
     			} else {
-    				guess.innerHTML = '_';
+    				guess.innerHTML = '_ ';
     			}
     			playerGuess.push(guess);
     			wordHolder.appendChild(correct);
@@ -46,18 +45,19 @@ window.onload = function() {
     }
 
     //player lives
-    // comments = function () {
-    // 	showLives.innerHTML = "You have " + lives + " lives";
-    // 	if (lives < 1) {
-    // 		showLives.innerHTML = "Game Over";
-    // 	}
-    // 	for (var i = 0; i < playerGuess.length; i++){
-    // 		if (counter + space === playerGuess.length) {
-    // 			showLives.innerHTML = "You Win!";
-    // 			console.log(showLives);
-    // 		}
-    // 	}
-    // };
+    comments = function () {
+    	var showLives = 10;
+    	showLives.innerHTML = "You have " + lives + " lives";
+    	if (lives < 1) {
+    		showLives.innerHTML = "Game Over";
+    	}
+    	for (var i = 0; i < playerGuess.length; i++){
+    		if (counter + space === playerGuess.length) {
+    			showLives.innerHTML = "You Win!";
+    			console.log(showLives);
+    		}
+    	}
+    };
 
     	//Animate Hangman
     	var animate = function () {
@@ -68,7 +68,7 @@ window.onload = function() {
     	//Hangman
 
     	canvas = function () {
-    		myStickman = document.getElementById('#pictureBox');
+    		myStickman = document.getElementById('pictureBox');
     		context = myStickman.getContext('2d');
     		context.beginPath();
     		context.strokeStyle = '#efefef';
@@ -76,7 +76,7 @@ window.onload = function() {
     	};
 
     		head = function() {
-    		myStickman = document.getElementByid('#pictureBox');
+    		myStickman = document.getElementById('pictureBox');
     		context = myStickman.getContext('2d');
     		context.beginPath();
     		context.arc(60, 25, 10, 0, Math.PI*2, true);
@@ -128,7 +128,7 @@ window.onload = function() {
 		drawArray = [rightLeg, leftLeg, rightArm, leftArm, torso, head, frame4, frame3, frame2, frame1];
 
 		//OnClick Function
-	check = function () {
+	check = function (list) {
 		list.onclick = function() {
 			var playerChoice = (this.innerHTML);
 			this.onclick = null;
@@ -179,14 +179,14 @@ window.onload = function() {
     play();
   }
 };
-// 	var modernRockBands = ['radiohead', 'nirvana', 'weezer',
-// 						'phish', 'fray', 'beatles', 'kinks',
-// 						'monkees', 'who', 'wings', 'cream',
-// 						'antibalas', 'soundgarden', 'beck',
-// 						'cure', 'devotchka', 'david bowie', 'rolling stones'];
+	// var modernRockBands = ['radiohead', 'nirvana', 'weezer',
+	// 					'phish', 'fray', 'beatles', 'kinks',
+	// 					'monkees', 'who', 'wings', 'cream',
+	// 					'antibalas', 'soundgarden', 'beck',
+	// 					'cure', 'devotchka', 'david bowie', 'rolling stones'];
 
-// 		console.log(modernRockBands);
-// // getElementByid('#classRockBands').on("click", )
+	// 	console.log(modernRockBands);
+	// document.getElementByid('#classRockBands').on("click", )
 
 
 
